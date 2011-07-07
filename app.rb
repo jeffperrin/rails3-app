@@ -30,6 +30,7 @@ LAYOUT
 
 remove_file "app/views/layouts/application.html.erb"
 create_file "app/views/layouts/application.html.haml", layout
+create_file ".rvmrc", "rvm ruby-1.9.2@#{app_name}"
 
 create_file "log/.gitkeep"
 create_file "tmp/.gitkeep"
@@ -41,12 +42,11 @@ docs = <<-DOCS
 
 Run the following commands to complete the setup of #{app_name.humanize}:
 
-% cd #{app_name}
-% rvm use --create --rvmrc default@#{app_name}
-% gem install bundler
-% bundle install
-% script/rails generate jquery:install
-% script/rails generate rspec:install
+cd #{app_name}
+gem install bundler
+bundle install
+script/rails generate jquery:install
+script/rails generate rspec:install
 
 DOCS
 
